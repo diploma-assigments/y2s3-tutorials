@@ -49,12 +49,12 @@ The purpose of system calls is to provide an interace between a process and  ope
 #### 4.
 ##### i)
 
-| Interrupts                                                                                     | Traps                               |
-| ---------------------------------------------------------------------------------------------- | ----------------------------------- |
-| Called hardware interrupts                                                                     | Called software interrupts          |
-| Trigered by hardware                                                                           | Triggered by software               |
-| A signal indicating an event that requires immidiate attention                                 |                                     |
-| Trigger processor to execute corresponding interrupt handler routine (e.g. stop infinite loop) | Transfer control to trap controller |
+| Interrupts                                                                                     | Traps                                                                          |
+| ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Called hardware interrupts                                                                     | Called software interrupts                                                     |
+| Trigered by hardware                                                                           | Triggered by software                                                          |
+| A signal indicating an event that requires immidiate attention                                 | A signal to invoke OS functions (e.g. visual studio printf() -> OS -> write()) |
+| Trigger processor to execute corresponding interrupt handler routine (e.g. stop infinite loop) | Transfer control to trap controller                                            |
 
 ##### ii)
 If the computer is without interrupt capability, the CPU protection cannot maintain control on every process. It will lead to the process having infinity looping. In conclusion, without interruption, the CPU will not know that a certain process has been completed or otherwise and the next task could not be initiated. The processor will run the program forever, other programs will wait to be executed until the program is finished, the computer will be damaged.
